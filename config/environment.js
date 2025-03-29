@@ -26,6 +26,12 @@ module.exports = function (environment) {
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
+    ENV.API_URL = process.env.API_URL;
+    ENV.API_USERNAME = process.env.API_USERNAME;
+    ENV.API_PASSWORD = process.env.API_PASSWORD;
+    ENV.contentSecurityPolicy = {
+      'connect-src': "'self' http://localhost:8000",
+    };
   }
 
   if (environment === 'test') {
