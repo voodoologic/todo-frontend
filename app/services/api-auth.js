@@ -22,7 +22,8 @@ export default class ApiAuthService extends Service {
           if (response.status === 401) {
             return this.refreshToken().then(() => {
               // After successfully refreshing the token, retry the original request
-              return this.getUserToken(clientId, clientSecret);
+              // return this.getUserToken(clientId, clientSecret);
+              // TODO do refresh
             });
           }
           throw new Error('Failed to fetch user token');

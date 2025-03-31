@@ -1,0 +1,41 @@
+<form {{on 'submit' this.onSubmit}}>
+  <label for="task-name">Name:</label>
+  <Input
+      type="text"
+      id="task-name"
+      name="name"
+      @value={{this.name}}
+  />
+
+  <label for="task-description">Description:</label>
+  <Textarea
+      id="task-description"
+      name="description"
+      @value={{this.description}}
+
+  />
+
+  <label for="task-due-date">Due Date:</label>
+  <Input
+      @type="date"
+      id="task-due-date"
+      name="due_date"
+      @value={{this.due_date}}
+  />
+
+  <label for="task-priority">Priority:</label>
+  <Input
+      @type="text"
+      id="task-priority"
+      name="priority"
+      @value={{this.priority}}
+  />
+
+  <label>
+    <input type="checkbox" name='completed' >
+    Completed
+  </label>
+
+  <button type="submit" >Create Task</button>
+</form>
+{{yield}}
