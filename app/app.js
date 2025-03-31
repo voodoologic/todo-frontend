@@ -9,7 +9,7 @@ import * as runtime from '@glimmer/runtime';
 import * as tracking from '@glimmer/tracking';
 import * as validator from '@glimmer/validator';
 import * as reference from '@glimmer/reference';
-import {RSVP} from '@ember/-internals/runtime';
+import { RSVP } from '@ember/-internals/runtime';
 
 export default class App extends Application {
   modulePrefix = config.modulePrefix;

@@ -1,0 +1,5 @@
+{{page-title "Tasks"}}
+    {{#each this.model as |task|}}
+        <Task @task={{task}} />
+    {{/each}}
+{{outlet}}

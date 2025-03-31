@@ -1,0 +1,8 @@
+<ul>
+    <li><strong>Name:</strong> {{@task.name}}</li>
+    <li><strong>Description:</strong> {{@task.description}}</li>
+    <li><strong>Due Date:</strong> {{@task.due_date}}</li>
+    <li><strong>Priority:</strong> {{@task.priority}}</li>
+    <li><strong>Completed:</strong> {{if @task.completed "Yes" "No"}}</li>
+</ul>
+{{yield}}

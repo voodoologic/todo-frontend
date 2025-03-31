@@ -7,22 +7,6 @@ export default class ApiAuthService extends Service {
   accessToken = null;
   refreshToken = null;
 
-  async getClientTokens() {
-    let { API_URL } = ENV;
-
-    return fetch(`${API_URL}/api/v1/token`)
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error('Failed to fetch client tokens');
-        }
-        return response.json();
-      })
-      .catch((error) => {
-        console.error('Error fetching client tokens:', error);
-        return null;
-      });
-  }
-
   async getUserToken() {
     let { API_URL, API_USERNAME, API_PASSWORD } = ENV;
 
@@ -46,8 +30,8 @@ export default class ApiAuthService extends Service {
         return response.json();
       })
       .then((data) => {
-        this.accessToken = data.access;
-        this.refreshToken = data.refresh;
+        this.accessToken = data.data.access;
+        this.refreshToken = data.data.refresh;
       })
       .catch((error) => {
         console.error('Error fetching user token:', error);
@@ -55,7 +39,6 @@ export default class ApiAuthService extends Service {
       });
   }
   async invoke() {
-    // const { client_id, client_secret } = await this.getClientTokens();
     await this.getUserToken();
   }
 }
