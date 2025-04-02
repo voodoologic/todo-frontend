@@ -5,4 +5,9 @@ export default class Task extends Component {
   deleteTask() {
     this.args.task.destroyRecord();
   }
+  @action
+  completeTask(){
+    this.args.task.complete = true
+    this.args.task.save()
+  }
 }

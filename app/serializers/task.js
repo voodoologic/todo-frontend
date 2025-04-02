@@ -1,7 +1,7 @@
 import JSONAPISerializer from '@ember-data/serializer/json-api';
 
 export default class TaskSerializer extends JSONAPISerializer {
-  attr = {
+  attrs = {
     dueDate: 'due_date',
   };
   serialize(snapshot, options) {
