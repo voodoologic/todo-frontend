@@ -1,3 +1,6 @@
+{{#if @task.id}}
+  <h1>ID: {{@task.id}}</h1>
+{{/if}}
 <form {{on 'submit' this.onSubmit}}>
   <label for="task-name">Name:</label>
   <Input
