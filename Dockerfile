@@ -10,6 +10,8 @@ WORKDIR /app
 # Copy the package.json and yarn.lock files first to leverage Docker's caching
 COPY package.json yarn.lock ./
 
+COPY .yarnrc.yml ./
+COPY .yarn ./.yarn
 # Install dependencies
 RUN yarn install
 

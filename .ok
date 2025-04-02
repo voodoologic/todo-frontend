@@ -1,2 +1,4 @@
 yarn start
 sudo chown -R oldbones:oldbones node_modules
+docker compose up -d --build --force-recreate
+docker compose logs
