@@ -1,6 +1,21 @@
-
 {{page-title "Tasks"}}
-{{#each this.model as |task|}}
-    <Task @task={{task}} />
-{{/each}}
+<table class="u-full-width">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Due</th>
+            <th>Priority</th>
+            <th>Completed</th>
+            <th>Description</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each this.model as |task|}}
+            <Task @task={{task}} />
+        {{/each}}
+    </tbody>
+</table>
+<button type="button">Create New</button>
 {{outlet}}

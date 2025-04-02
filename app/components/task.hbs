@@ -1,30 +1,12 @@
-<div class='row'>
-    <div class='one column'><strong>Name:</strong></div> <div class='two columns'>{{@task.name}}</div>
-    <div class='two columns'>
-        <LinkTo @route='task.edit-task' @model={{@task}} class='button'>Edit</LinkTo>
-    </div>
-    <div class='two columns'>
+<tr>
+    <td>{{@task.id}}</td>
+    <td>{{@task.name}}</td>
+    <td>{{@task.dueDate}}</td>
+    <td>{{@task.priority}}</td>
+    <td>{{@task.completed}}</td>
+    <td>{{@task.description}}</td>
+    <td>
         <button type="button">Delete</button>
-    </div>
-    <div class='two columns'>
-        <button type="button">Create New</button>
-    </div>
-</div>
-<div class='row'>
-    <div class='two columns'><strong>Due Date:</strong></div> <div class='two columns'>{{@task.dueDate}}</div>
-</div>
-<div class='row'>
-    <div class='one column'><strong>Priority:</strong></div> <div class='two columns'>{{@task.priority}}</div>
-</div>
-<div class='row'>
-    <div class='one column'><strong>Completed:</strong></div> <div class='two columns'>{{if @task.completed "Yes" "No"}}</div>
-</div>
-<div class='row'>
-    <div class='two columns u-cf'><strong>Description:</strong></div>
-</div>
-<div class='row'>
-    <div class='twelve columns u-cf'>{{@task.description}}</div>
-</div>
-<div class='row'>
-</div>
-{{yield}}
+        <LinkTo @route='task.edit-task' @model={{@task}} class='button'>Edit</LinkTo>
+    </td>
+</tr>
