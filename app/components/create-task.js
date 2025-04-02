@@ -4,14 +4,30 @@ import { service } from '@ember/service';
 
 export default class CreateTask extends Component {
   @service store;
-  get name(){ return this.getTaskValue('name') }
-  set name(name){this.args.task.name = name}
-  get description(){ return this.getTaskValue('description')}
-  set description(desc){ this.args.task.description = desc }
-  get due_date() { return this.getTaskValue('dueDate') }
-  set due_date(date) { this.args.task.dueDate = date}
-  get priority() { return this.getTaskValue('priority')}
-  set priority(priority) { this.args.task.priority = priority }
+  get name() {
+    return this.getTaskValue('name');
+  }
+  set name(name) {
+    this.args.task.name = name;
+  }
+  get description() {
+    return this.getTaskValue('description');
+  }
+  set description(desc) {
+    this.args.task.description = desc;
+  }
+  get due_date() {
+    return this.getTaskValue('dueDate');
+  }
+  set due_date(date) {
+    this.args.task.dueDate = date;
+  }
+  get priority() {
+    return this.getTaskValue('priority');
+  }
+  set priority(priority) {
+    this.args.task.priority = priority;
+  }
 
   @action
   onSubmit(event) {
@@ -28,6 +44,6 @@ export default class CreateTask extends Component {
     this.args.task.save();
   }
   getTaskValue(key) {
-    return this.args.task[key]
+    return this.args.task[key];
   }
 }

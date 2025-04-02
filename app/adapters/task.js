@@ -18,14 +18,16 @@ export default class TaskAdapter extends JSONAPIAdapter {
   urlForCreateRecord(modelName, snapshot) {
     return `${this.buildURL(modelName)}/`;
   }
-  urlForFindRecord(id, modelName, snapshot){
+  urlForFindRecord(id, modelName, snapshot) {
     return `${this.buildURL(modelName)}/${id}/`;
   }
-  urlForRequest(params){
-    debugger
+  urlForRequest(params) {
+    debugger;
   }
-  urlForUpdateRecord(id, modelName, snapshot){
+  urlForUpdateRecord(id, modelName, snapshot) {
     return `${this.buildURL(modelName)}/${id}/`;
   }
-
+  urlForDeleteRecord(id, modelName, snapshot) {
+    return `${this.buildURL(modelName)}/${id}/`;
+  }
 }

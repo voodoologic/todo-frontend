@@ -6,7 +6,7 @@
     <td>{{@task.completed}}</td>
     <td>{{@task.description}}</td>
     <td>
-        <button type="button">Delete</button>
+        <button type="button" {{on 'click' this.deleteTask}}>Delete</button>
         <LinkTo @route='task.edit-task' @model={{@task}} class='button'>Edit</LinkTo>
     </td>
 </tr>
