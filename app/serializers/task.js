@@ -1,12 +1,12 @@
 import JSONAPISerializer from '@ember-data/serializer/json-api';
 
 export default class TaskSerializer extends JSONAPISerializer {
-  attrs = {
-    dueDate: 'due_date',
-  };
-  serialize(snapshot, options) {
-    let json = super.serialize(...arguments);
-    console.log('json.data', json.data);
+  attr = {
+    dueDate: 'due_date'
+  }
+  serialize(snapshot, options){
+    let json = super.serialize(...arguments)
+    console.log('json.data', json.data)
     let newJson = {
       name: json.data.attributes.name,
       description: json.data.attributes.description,
