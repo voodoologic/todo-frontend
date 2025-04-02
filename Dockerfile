@@ -1,6 +1,9 @@
 # Use the official Node.js image as a base
 FROM node:18
 
+# Install Ember CLI globally
+RUN yarn global add ember-cli
+
 # Set the working directory to /app
 WORKDIR /app
 
