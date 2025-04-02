@@ -7,7 +7,7 @@ export default class Task extends Component {
   }
   @action
   completeTask(){
-    this.args.task.complete = true
+    this.args.task.completed = true
     this.args.task.save()
   }
 }
