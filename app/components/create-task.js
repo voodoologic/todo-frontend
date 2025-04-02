@@ -28,19 +28,17 @@ export default class CreateTask extends Component {
   set priority(priority) {
     this.args.task.priority = priority;
   }
+  get completed(){
+    return this.getTaskValue('completed')
+  }
+  set completed(value){
+    debugger
+    this.args.task.completed = value;
+  }
 
   @action
   onSubmit(event) {
     event.preventDefault();
-    // let formData = new FormData(event.target);
-    // this.args.task.set('name', formData.get('name'));
-    // this.args.task.set('description', formData.get('description'));
-    // this.args.task.set('dueDate', formData.get('due_date'));
-    // this.args.task.set('priority', formData.get('priority'));
-    // this.args.task.set('completed', false);
-    // console.log(this.args.task);
-    // console.log(this.args.task.dueDate);
-    // debugger;
     this.args.task.save();
   }
   @action
@@ -49,5 +47,9 @@ export default class CreateTask extends Component {
   }
   getTaskValue(key) {
     return this.args.task[key];
+  }
+  @action
+  toggleCompleted(event){
+    this.args.task.completed = event.target.checked
   }
 }

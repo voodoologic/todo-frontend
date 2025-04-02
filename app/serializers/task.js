@@ -10,7 +10,7 @@ export default class TaskSerializer extends JSONAPISerializer {
     let newJson = {
       name: json.data.attributes.name,
       description: json.data.attributes.description,
-      priority: json.data.attributes.priority, // TODO make dynamic
+      priority: json.data.attributes.priority,
       due_date: json.data.attributes.due_date,
       completed: json.data.attributes.completed,
       user: {

@@ -38,7 +38,12 @@
   </select>
 
   <label>
-    <input type="checkbox" name='completed' >
+    <input
+      type="checkbox"
+      name='completed'
+      checked={{this.completed}}
+      {{on 'click' this.toggleCompleted}}
+    >
     Completed
   </label>
 
