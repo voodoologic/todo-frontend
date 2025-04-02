@@ -43,6 +43,10 @@ export default class CreateTask extends Component {
     // debugger;
     this.args.task.save();
   }
+  @action
+  changeSelect(event){
+    this.priority = event.target.value
+  }
   getTaskValue(key) {
     return this.args.task[key];
   }

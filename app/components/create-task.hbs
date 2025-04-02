@@ -27,12 +27,15 @@
   />
 
   <label for="task-priority">Priority:</label>
-  <Input
-      @type="text"
-      id="task-priority"
-      name="priority"
-      @value={{this.priority}}
-  />
+  <select
+    id="task-priority"
+    name="priority"
+    {{on 'change' this.changeSelect}}
+  >
+    <option value="high">High</option>
+    <option value="medium">Medium</option>
+    <option value="low">Low</option>
+  </select>
 
   <label>
     <input type="checkbox" name='completed' >
